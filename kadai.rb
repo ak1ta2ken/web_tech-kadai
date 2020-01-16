@@ -10,7 +10,7 @@ server = WEBrick::HTTPServer.new({
   Signal.trap(signal){ server.shutdown }
 }
 
-server.mount('/kadai', WEBrick::HTTPServlet::ERBHandler, 'kadai.html.erb')
+server.mount('/', WEBrick::HTTPServlet::ERBHandler, 'kadai.html.erb')
 
 server.mount('/goya_give_for.cgi', WEBrick::HTTPServlet::CGIHandler, 'goya_give_for.rb')
 
